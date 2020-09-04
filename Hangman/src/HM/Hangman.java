@@ -24,11 +24,20 @@ public class Hangman {
 			System.out.println("\n\n\n\n\n");
 			if (guess.length() > 1) //if user inputs more than just a letter
 			{
-				System.out.println("You have entered: " + guess + ". Please enter a single letter");
-				guessWord.printWord();
+				if(guess.equals(word))
+				{
+					System.out.println("You have guessed the word! " + word);
+					isWordGuessed = true;
+				}	
+				else
+				{
+					System.out.println("You have entered: " + guess + ". Please enter a single letter");
+					guessWord.printWord();
+				}
 			}
 			else if (lettersUsed.contains(guess)) //if the user has already entered the letter
 			{
+				DrawMan.draw(wrongGuesses);
 				System.out.println("You have already entered: " + guess + ". Please enter another single letter");
 				guessWord.printWord();
 			}

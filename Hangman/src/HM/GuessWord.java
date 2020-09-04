@@ -32,9 +32,9 @@ public class GuessWord {
 			if(wordToGuess[i] == input)
 			{
 				guessedWord[i] = input;
-				System.out.println(guessedWord);
 			}
 		}
+			System.out.println(guessedWord);
 		if(Arrays.toString(wordToGuess).contains(Arrays.toString(guessedWord)))
 		{
 			System.out.print("You have guessed the word! Word was: ");
